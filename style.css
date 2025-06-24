@@ -1,0 +1,242 @@
+:root {
+  --naranja: rgba(244, 139, 69, 0.996);
+  --negro: #1a1a1a;
+  --blanco: #ffffff;
+}
+
+/* Estilo global */
+html, body {
+  height: 100%;
+  margin: 0;
+  scroll-behavior: smooth;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--negro);
+  color: var(--blanco);
+  display: flex;
+  flex-direction: column;
+}
+
+.fondo {
+  background-image: url('logo.jpg.jpg'); /* cambia esta imagen */
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 1;
+}
+
+.fondo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+/* Encabezado */
+header {
+  background-color: var(--naranja);
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; /* importante si el contenido se reduce en pantallas pequeñas */
+}
+
+.logo {
+  height: 80px;
+  transition: transform 0.3s;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* Navegación */
+nav a {
+  color: var(--blanco);
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--negro);
+}
+
+/* Contenido principal */
+main {
+  flex: 1;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+main h1 {
+  color: var(--naranja);
+}
+
+/* Pie de página */
+footer {
+  background-color: var(--naranja);
+  color: var(--blanco);
+  text-align: center;
+  padding: 15px;
+}
+
+.redes-sociales {
+  margin-top: 10px;
+}
+
+.redes-sociales a {
+  color: var(--blanco);
+  margin: 0 10px;
+  font-size: 20px;
+  transition: transform 0.3s, color 0.3s;
+  cursor: pointer;
+}
+
+.redes-sociales a:hover {
+  color: var(--negro);
+  transform: scale(1.2);
+}
+/* Estilo del texto de la empresa en el header */
+.nombre-empresa {
+  text-align: center;
+  margin: 0 20px;
+  flex-grow: 1;
+}
+
+.nombre-empresa h1 {
+  font-size: 24px;
+  margin: 0;
+  color: var(--blanco);
+}
+
+.nombre-empresa p {
+  font-size: 14px;
+  margin: 0;
+  color: var(--blanco);
+}
+#catalogo {
+  background-color: #f7f7f7; /* Fondo claro y limpio */
+  color: #1a1a1a;            /* Texto oscuro para buena lectura */
+  padding: 60px 20px;
+  position: relative;
+  z-index: 2;
+}
+
+#catalogo h2 {
+  text-align: center;
+  color: var(--naranja);
+  margin-bottom: 40px;
+  font-size: 28px;
+}
+#catalogo {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+#catalogo.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+#inicio {
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #1a1a1a;
+  padding: 60px 20px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  display: none;
+}
+
+#inicio.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.beneficios {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.beneficio {
+  background-color: #f7f7f7;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 300px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.beneficio i {
+  font-size: 32px;
+  color: var(--naranja);
+  margin-bottom: 10px;
+}
+#contacto {
+  background-color: #f7f7f7;
+  color: #1a1a1a;
+  padding: 60px 20px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  display: none;
+}
+
+#contacto.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.formulario-contacto {
+  max-width: 600px;
+  margin: auto;
+  text-align: left;
+}
+
+.formulario-contacto label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.formulario-contacto input,
+.formulario-contacto textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.formulario-contacto button {
+  margin-top: 20px;
+  background-color: var(--naranja);
+  color: var(--blanco);
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.formulario-contacto button:hover {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+.imagen-vehiculo {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  margin: 20px auto;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}

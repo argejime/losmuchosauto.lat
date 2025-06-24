@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>LOS MUCHOS AUTO IMPORT</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="fondo">
+
+  <header>
+    <img src="logo.jpg.jpg" alt="Logo Los Muchos Auto Import" class="logo">
+    <div class="nombre-empresa">
+      <h1>LOS MUCHOS AUTO IMPORT</h1>
+      <p>Calida, Confianza y los mejores autos importados.</p>
+    </div>
+    
+    <nav>
+      <a href="#" onclick="toggleInicio()">Inicio</a>
+      <a href="#" onclick="mostrarCatalogo()">Catálogo</a>
+      <a href="#" onclick="toggleContacto()">Contacto</a>
+    </nav>
+  </header>
+
+
+  <main>
+    <section id="catalogo" style="display: none;">
+      <h2>Catalogo de Vehiculo Honda</h2>
+
+      <div  class="Vehiculo">
+        <h3>Honda CR-V (2019 - 2025)</h3>
+        <ul>
+          <li>Honda CR-V 2019 - SUV confiable con excelente espacio</li>
+      <li>Honda CR-V 2020 - Tecnología mejorada y mayor seguridad</li>
+      <li>Honda CR-V 2021 - Motor turbo eficiente y diseño moderno</li>
+      <li>Honda CR-V 2022 - Versión híbrida disponible</li>
+      <li>Honda CR-V 2023 - Actualización estética y multimedia</li>
+      <li>Honda CR-V 2024 - Edición especial con equipamiento premium</li>
+      <li>Honda CR-V 2025 - Nuevo diseño, conectividad avanzada</li>
+      <img src="imgcrv2025.jpg" alt="Honda CR-V 2025" class="imagen-vehiculo">
+
+        </ul>
+      </div>
+
+
+      <div class="vehiculo">
+    <h3>Honda Civic (2019 - 2025)</h3>
+    <ul>
+      <li>Honda Civic 2019 - Compacto eficiente y deportivo</li>
+      <li>Honda Civic 2020 - Interior mejorado y conducción suave</li>
+      <li>Honda Civic 2021 - Excelente rendimiento y seguridad</li>
+      <li>Honda Civic 2022 - Diseño renovado y tecnología Honda Sensing</li>
+      <li>Honda Civic 2023 - Estilo elegante con motor eficiente</li>
+      <li>Honda Civic 2024 - Versión híbrida con bajo consumo</li>
+      <li>Honda Civic 2025 - Conectividad total y diseño futurista</li>
+      <img src="imgcrv2025.jpg" alt="Honda CR-V 2025" class="imagen-vehiculo">
+
+      </ul>
+    </div>
+  </section>
+  <section id="contacto" style="display: none;">
+  <h2>Contáctanos</h2>
+  <form class="formulario-contacto">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required>
+
+    <label for="email">Correo electrónico:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="mensaje">Mensaje:</label>
+    <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+    <button type="submit">Enviar</button>
+  </form>
+</section>
+</main>
+<section id="inicio" style="display: none;">
+  <h2>Bienvenido a Los Muchos Auto Import</h2>
+  <p>Conectamos calidad internacional con tu camino.</p>
+
+  <div class="beneficios">
+    <div class="beneficio">
+      <i class="fas fa-car-side"></i>
+      <p>Autos importados desde EE.UU., Japón y Europa</p>
+    </div>
+    <div class="beneficio">
+      <i class="fas fa-user-check"></i>
+      <p>Confianza, legalidad y atención personalizada</p>
+    </div>
+    <div class="beneficio">
+      <i class="fas fa-hand-holding-usd"></i>
+      <p>Precios competitivos y garantía de satisfacción</p>
+    </div>
+  </div>
+</section>
+
+
+<footer>
+  <p>&copy; 2025 LOS MUCHOS AUTO IMPORT. Todos los derechos reservados.</p>
+  <div class="redes-sociales">
+    <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://wa.me/18091234567" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+  </div>
+</footer>
+
+
+<script>
+  function mostrarCatalogo() {
+    const catalogo = document.getElementById('catalogo');
+    const inicio = document.getElementById('inicio');
+    const contacto = document.getElementById('contacto');
+
+    if (catalogo.style.display === 'block') {
+      catalogo.style.display = 'none';
+      catalogo.classList.remove('visible');
+    } else {
+      catalogo.style.display = 'block';
+      setTimeout(() => {
+        catalogo.classList.add('visible');
+        catalogo.scrollIntoView({ behavior: 'smooth' });
+      }, 50);
+      inicio.style.display = 'none';
+      inicio.classList.remove('visible');
+      contacto.style.display = 'none';
+      contacto.classList.remove('visible');
+    }
+  }
+
+  function toggleInicio() {
+    const inicio = document.getElementById('inicio');
+    const catalogo = document.getElementById('catalogo');
+    const contacto = document.getElementById('contacto');
+
+    if (inicio.style.display === 'block') {
+      inicio.style.display = 'none';
+      inicio.classList.remove('visible');
+    } else {
+      inicio.style.display = 'block';
+      setTimeout(() => {
+        inicio.classList.add('visible');
+        inicio.scrollIntoView({ behavior: 'smooth' });
+      }, 50);
+      catalogo.style.display = 'none';
+      catalogo.classList.remove('visible');
+      contacto.style.display = 'none';
+      contacto.classList.remove('visible');
+    }
+  }
+
+  function toggleContacto() {
+    const contacto = document.getElementById('contacto');
+    const inicio = document.getElementById('inicio');
+    const catalogo = document.getElementById('catalogo');
+
+    if (contacto.style.display === 'block') {
+      contacto.style.display = 'none';
+      contacto.classList.remove('visible');
+    } else {
+      contacto.style.display = 'block';
+      setTimeout(() => {
+        contacto.classList.add('visible');
+        contacto.scrollIntoView({ behavior: 'smooth' });
+      }, 50);
+      inicio.style.display = 'none';
+      inicio.classList.remove('visible');
+      catalogo.style.display = 'none';
+      catalogo.classList.remove('visible');
+    }
+  }
+</script>
+
+</body>
+</html>
